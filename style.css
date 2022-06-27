@@ -1,0 +1,127 @@
+/*-----------------------var------------------------*/
+:root{
+  --color-Red: hsl(0, 78%, 62%);
+  --color-Cyan: hsl(180, 62%, 55%);
+  --color-Orange: hsl(34, 97%, 64%);
+  --color-Blue: hsl(212, 86%, 64%);
+  --color-neutral-dark: hsl(234, 12%, 34%);
+  --color-neutral-gray: hsl(229, 6%, 66%);
+  --color-neutral-white: hsl(0, 0%, 98%);
+  --Weight-Ligth: 200;
+  --Weight-Regular: 400;
+	--Weight-Bold: 600;
+}
+/*-----------------------reset------------------------*/
+body {
+  font-size: 15px;
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+}
+*{
+	box-sizing: border-box;
+}
+h1, h2, p {
+	margin: 0;
+}
+
+/*-----------------------mobile------------------------*/
+.container{
+	padding: 80px 30px;
+}
+header{
+	margin-bottom: 60px;
+}
+.principal-title{
+	font-size: 1.5rem;
+	font-weight: var(--Weight-Ligth);
+	color: var(--color-neutral-dark);
+	margin-bottom: 12px;
+	text-align: center;
+}
+.principal-title__bold{
+	font-weight: var(--Weight-Bold);
+}
+.principal-text{
+	color: var(--color-neutral-gray);
+	text-align: center;
+	line-height: 1.7;
+}
+.card-container{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 25px;
+}
+.card {
+	width: min(100%, 300px);
+	padding: 20px;
+	border-top: 4px solid var(--color-Cyan);
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0 10px 20px 0 hsla(234, 12%, 34%, 20%);
+}
+.card-title{
+	color: var(--color-neutral-dark);
+	font-size: 1.3rem;
+	margin-bottom: 5px;
+}
+.card-text{
+	color: var(--color-neutral-gray);
+	font-size: 0.8rem;
+	line-height: 1.8;
+	margin-bottom: 30px;
+}
+.card__img{
+	width: 55px;
+	display: block;
+	margin-left: auto;
+}
+.card-red{
+	border-top: 4px solid var(--color-Red);
+}
+.card-orange{
+	border-top: 4px solid var(--color-Orange);
+}
+.card-blue{
+	border-top: 4px solid var(--color-Blue);
+}
+.attribution { 
+	padding-top: 30px;
+	font-size: 11px; text-align: center; 
+}
+.attribution a {
+	color: hsl(228, 45%, 44%); 
+}
+/*-----------------------desktop------------------------*/
+@media screen and (min-width: 464px) {
+	.principal-title{
+		width: 400px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+@media screen and (min-width: 606px) {
+	.principal-text{
+		width: 546px;
+		margin-left: auto;
+		margin-right: auto;
+	}	
+}
+@media screen and (min-width: 1010px) {
+	.card-container{
+		width: 950px;
+		margin-left: auto;
+		margin-right: auto;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
+	.card:nth-child(1), .card:nth-child(4){
+		grid-row: span 2;
+		align-self: center;
+	}
+	.card:nth-child(3){
+		grid-row: 2 / 3;
+		grid-column: 2 / 3;
+	}
+}
